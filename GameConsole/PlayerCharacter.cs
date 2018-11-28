@@ -12,6 +12,8 @@ namespace GameConsole
         public int? DaysSinceLastLogin { get; set; }  //short hand int?  instead of Nullable<int>
         public DateTime? DateOfBirth { get; set; }  // same as above
 
+        public bool? IsNoob { get; set; }
+
         public PlayerCharacter()
         {
             DateOfBirth = null;
