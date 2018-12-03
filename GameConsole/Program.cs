@@ -10,11 +10,44 @@ namespace GameConsole
     {
         static void Main(string[] args)
         {
-            var player = new PlayerCharacter();
-            player.Name = "";
-            player.DaysSinceLastLogin = 42;
+            PlayerCharacter sarah = new PlayerCharacter(new DiamondSkinDefence())
+            {
+                Name = "Sarah"
+            };
 
-            PlayerDisplayer.Write(player);
+            PlayerCharacter amrit = new PlayerCharacter(new IronBonesDefence())
+            {
+                Name = "Amrit"
+            };
+
+            PlayerCharacter gentry = new PlayerCharacter(null)
+            {
+                Name = "Gentry"
+            };
+            
+            sarah.Hit(10);
+            amrit.Hit(10);
+            gentry.Hit(10);
+
+
+            //PlayerCharacter player = new PlayerCharacter();
+            //player.Name = ""; removed for Null-Conditional Operator ?. ?[
+            //player.DaysSinceLastLogin = 42;
+
+            //PlayerDisplayer.Write(player); //removed for Null-Conditional Operator ?. ?[ demo
+
+            //int days = player?.DaysSinceLastLogin ?? -1;
+
+            //PlayerCharacter[] players = null;
+
+            //int days = player.DaysSinceLastLogin.Value;
+
+
+            //Console.WriteLine(days);
+
+            //string p1 = players?[0]?.Name;
+            //string p2 = players?[1]?.Name;
+            //string p3 = players?[2]?.Name;
 
             Console.ReadLine();
         }
